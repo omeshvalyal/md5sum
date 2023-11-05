@@ -10,15 +10,6 @@ pipeline {
                 }
             }
         }
-        
-        stage('Run Shell Script') {
-            steps {
-                sh '''
-                    cd /var/lib/jenkins/workspace/promote.sh
-                    chmod +x promote.sh
-                    ./promote.sh
-                    '''
-                }
-            }
     }
 }
+     
