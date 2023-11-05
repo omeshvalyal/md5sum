@@ -1,4 +1,6 @@
 pipeline {
+   jdk 'java'
+
     agent any
 
     stages {
