@@ -15,6 +15,7 @@ pipeline {
                 script {
                    git credentialsId: 'github', url: 'git@github.com:omeshvalyal/md5sum.git'
                    echo "git installation succesfull"
+                   sh "git rev-parse HEAD" // Add this line to print the HEAD revision
                 }
             }
         }
