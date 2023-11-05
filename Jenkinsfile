@@ -4,9 +4,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // This step checks out your source code from the configured repository
                 script {
-                    checkout scm
+                   git credentialsId: 'github', url: 'git@github.com:omeshvalyal/md5sum.git'
                 }
             }
         }
@@ -14,11 +13,11 @@ pipeline {
         stage('Run Shell Script') {
             steps {
                 sh '''
-                    # Your shell script commands go here
-                    echo "Hello from the shell script"
-                    # Add any other commands or scripts you want to run
-                '''
+                    cd /var/lib/jenkins/promote.sh
+                    chmod 775 promote.sh
+                    ./promote.sh
+                    '''
+                }
             }
-        }
     }
 }
