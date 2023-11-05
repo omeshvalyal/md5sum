@@ -14,7 +14,7 @@ pipeline {
             steps {
                 sh '''
                     cd /var/lib/jenkins/promote.sh
-                    chmod 775 promote.sh
+                    chmod +x promote.sh
                     ./promote.sh
                     '''
                 }
